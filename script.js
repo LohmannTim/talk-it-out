@@ -31,19 +31,23 @@ for (var i=0; i < majorKey.length; i++){
 // 5. Remove the first and last values from `keyChars`
 keyChars.shift()
 keyChars.pop()
-    console.log(majorKey)
+    console.log(keyChars)
 // 6. Create a new variable. Loop **backwards** through `keyChars` and store each value into the new variable, combining each of the values of `keyChars`
 var charsKey = []
-for (i = (keyChars.length - 1); i >= 0; i--){
-    i += charsKey
+for (i = keyChars.length-1; i >= 0; i--){
+    charsKey += keyChars[i] 
 }
+console.log(charsKey)
+console.log(majorKey)
 // 7. `parseInt` both the `majorKey` and the new variable created in Step 6, ensure that both `majorKey` and the new variable are set to these new parsed values.
-parseInt(majorKey)
-parseInt(charsKey)
+majorKey = parseInt(majorKey);
+charsKey = parseInt(charsKey);
+
 // ******* SWITCH PROGRAMMERS *******
 
 // 8. Add `majorKey` and the new variable created in Step 6 together and store them in `majorKey`
 majorKey = majorKey + charsKey;
+console.log(majorKey)
 // 9. If the new value of `majorKey` is less than 60, set `majorKey` equal to 14. If not, check to see if it is equal to 2930, if it is, set `majorKey` equal to 27.
 // If neither of these are true, set `majorKey` to 2.
 if(majorKey < 60){
@@ -57,22 +61,25 @@ else {
     majorKey = 2
 }
 // 10. Create a while loop that counts down from 10 and increments `majorKey` by 1.
+console.log(majorKey)
 i = 10
 while (i > 0){
     i --;
     majorKey ++;
 }
+console.log(majorKey)
 // 11. Create a function that accepts an argument `val`. The function should convert `val` to a string, then drop the first character off the string, but only if there
 // is more than one character in the string. Return `val` and set `majorKey` to the returned value.
 function valCall(val){
  val = val.toString();
- majorKey = val;
+val = val.substring(1);
+
 return val;
 
 }
 
 // 12. Call the function.
-valCall(majorKey);
+majorKey = valCall(majorKey);
 
 // 13. Console log `majorKey`. 
 console.log(majorKey)
