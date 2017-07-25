@@ -3,30 +3,35 @@
 var majorKey = 42;
 
 // 2. Create conditional logic to check if `majorKey` is greater than or equal to 53
-function greaterThan53(){
+
     if (majorKey >= 53){
 
 // 2-1. If true, add 42 to `majorKey`
-   majorKey + 42;
+   majorKey = majorKey + 42;
+   
 }
 // 2-2. If false, subtract 13 from `majorKey`
 
-    else{
-        majorKey - 13;
+    else {
+        majorKey = majorKey - 13;
+        
     }
-}
-greaterThan53(majorKey)
+
+
+console.log(majorKey)
 // 3. Add a string with a value of 11 to `majorKey`
 majorKey = majorKey + "11"
+console.log(majorKey)
 // 4. Create an array named `keyChars`, then loop through `majorKey` using the `charAt` method and set `keyChars[i]` to each value
 var keyChars = []
 for (var i=0; i < majorKey.length; i++){
         keyChars[i] = majorKey.charAt(i); //This is executed 3 times at once
     }
-   
+   console.log(keyChars)
 // 5. Remove the first and last values from `keyChars`
 keyChars.shift()
 keyChars.pop()
+    console.log(majorKey)
 // 6. Create a new variable. Loop **backwards** through `keyChars` and store each value into the new variable, combining each of the values of `keyChars`
 var charsKey = []
 for (i = (keyChars.length - 1); i >= 0; i--){
@@ -60,14 +65,15 @@ while (i > 0){
 // 11. Create a function that accepts an argument `val`. The function should convert `val` to a string, then drop the first character off the string, but only if there
 // is more than one character in the string. Return `val` and set `majorKey` to the returned value.
 function valCall(val){
-val = val.toString();
+ val = val.toString();
+ majorKey = val;
 return val;
 
 }
 
 // 12. Call the function.
-valCall(40);
-majorKey = val;
+valCall(majorKey);
+
 // 13. Console log `majorKey`. 
 console.log(majorKey)
 // 14. Create an index.html file, link in this JavaScript file. Load in the browser and check the value from Step 13.
